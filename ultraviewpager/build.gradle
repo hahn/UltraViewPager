@@ -99,7 +99,12 @@ dependencies {
     implementation 'androidx.viewpager:viewpager:1.0.0'
 }
 
-deployConfig = rootProject.file('jcenterDeploy.gradle')
-if (deployConfig.exists()) {
-    apply from: rootProject.file('jcenterDeploy.gradle')
-}
+//File deployConfig = rootProject.file('jcenterInstall.gradle')
+//if (deployConfig.exists()) {
+//    apply from: rootProject.file('jcenterInstall.gradle')
+//}
+//
+//deployConfig = rootProject.file('jcenterDeploy.gradle')
+//if (deployConfig.exists()) {
+//    apply from: rootProject.file('jcenterDeploy.gradle')
+//}
