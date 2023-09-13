@@ -29,7 +29,7 @@ package com.tmall.ultraviewpager.sample;
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 import android.util.SparseIntArray;
 import android.util.TypedValue;
 import android.view.Gravity;

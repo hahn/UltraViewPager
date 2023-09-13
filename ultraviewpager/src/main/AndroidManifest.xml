@@ -24,7 +24,6 @@
   ~
   -->
 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tmall.ultraviewpager">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 </manifest>
