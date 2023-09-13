@@ -25,6 +25,10 @@
  */
 
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+group = 'com.github.hahn'
+version = project.hasProperty('VERSION_NAME') ? VERSION_NAME : ''
 
 buildscript {
     repositories {
