@@ -27,12 +27,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 33
+    buildToolsVersion "33.0.1"
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 23
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
@@ -42,10 +42,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.tmall.ultraviewpager.sample'
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(':ultraviewpager')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':ultraviewpager')
+    implementation 'androidx.viewpager:viewpager:1.0.0'
 
 }
