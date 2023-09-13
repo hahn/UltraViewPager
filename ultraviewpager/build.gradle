@@ -27,9 +27,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
-group = 'com.github.hahn'
-version = project.hasProperty('VERSION_NAME') ? VERSION_NAME : ''
-
 buildscript {
     repositories {
         maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
@@ -75,8 +72,8 @@ ext {
     allLicenses = ["MIT"]
 }
 
-def VERSION = System.properties['version'] ?: '10'
-def VERSION_NAME = System.properties['versionName'] ?: '0.1.0'
+//def VERSION = System.properties['version'] ?: '10'
+//def VERSION_NAME = System.properties['versionName'] ?: '0.1.0'
 
 android {
     compileSdkVersion Integer.parseInt(System.properties['compileSdkVersion'] ?: '33')
@@ -101,6 +98,19 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.3.1'
     implementation 'androidx.viewpager:viewpager:1.0.0'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.findByName('release')
+                groupId = 'com.github.hahn'
+                artifactId = 'ultraviewpager'
+                version = project.hasProperty('VERSION_NAME') ? VERSION_NAME : ''
+            }
+        }
+    }
 }
 
 //File deployConfig = rootProject.file('jcenterInstall.gradle')
