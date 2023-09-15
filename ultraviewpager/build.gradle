@@ -89,6 +89,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
     namespace 'com.tmall.ultraviewpager'
 }
 
@@ -104,7 +109,7 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                from components.findByName('release')
+                from components.release
                 groupId = 'com.github.hahn'
                 artifactId = 'ultraviewpager'
                 version = project.hasProperty('VERSION_NAME') ? VERSION_NAME : ''
